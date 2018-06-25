@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.thrymr.multitimerapplication">
+
+    <application
+        android:name=".activity.SugarApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.TimerActivity" />
+
+        <service
+            android:name=".activity.CounterService"
+            android:enabled="true" />
+        <receiver
+            android:name=".activity.TimerActivity$TimerBroadCast"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+    <meta-data
+        android:name="DATABASE"
+        android:value="timer.db" />
+    <meta-data
+        android:name="VERSION"
+        android:value="1" />
+    <meta-data
+        android:name="QUERY_LOG"
+        android:value="true" />
+    <meta-data
+        android:name="DOMAIN_PACKAGE_NAME"
+        android:value="com.example.thrymr.multitimerapplication.model" />
+
+
+</manifest>
